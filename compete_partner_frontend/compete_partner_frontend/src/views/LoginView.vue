@@ -382,52 +382,38 @@ const switchTab = (tab) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 2rem;
+  background: var(--gray-100);
+  padding: 1.5rem;
   position: relative;
-  overflow: hidden;
 }
 
 .auth-page::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: moveBackground 20s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes moveBackground {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(30px, 30px); }
+  display: none;
 }
 
 .auth-container {
   display: flex;
-  max-width: 1000px;
+  max-width: 960px;
   width: 100%;
-  background: white;
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-2xl);
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
-  animation: slideUp 0.6s ease-out;
+  animation: slideUp 0.5s ease-out;
 }
 
 .auth-banner {
   flex: 1;
-  background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
+  background: #18181b;
   padding: 2.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fafafa;
   position: relative;
   overflow: hidden;
+  border-right: 1px solid var(--gray-800);
 }
 
 .banner-content {
@@ -437,31 +423,23 @@ const switchTab = (tab) => {
 }
 
 .logo-large {
-  width: 64px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-xl);
+  width: 56px;
+  height: 56px;
+  background: var(--primary-600);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
 }
 
 .banner-content h1 {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 0.375rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
   letter-spacing: -0.02em;
 }
 
@@ -492,15 +470,15 @@ const switchTab = (tab) => {
 }
 
 .feature-icon {
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-lg);
+  font-size: 1.125rem;
+  background: rgba(255, 255, 255, 0.08);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feature-item h4 {
@@ -526,37 +504,28 @@ const switchTab = (tab) => {
 .shape {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .shape-1 {
-  width: 300px;
-  height: 300px;
-  top: -100px;
-  right: -100px;
-  animation: floatShape 8s ease-in-out infinite;
+  width: 280px;
+  height: 280px;
+  top: -120px;
+  right: -120px;
 }
 
 .shape-2 {
-  width: 200px;
-  height: 200px;
-  bottom: -50px;
-  left: -50px;
-  animation: floatShape 10s ease-in-out infinite reverse;
+  width: 180px;
+  height: 180px;
+  bottom: -60px;
+  left: -60px;
 }
 
 .shape-3 {
-  width: 150px;
-  height: 150px;
-  top: 50%;
-  right: 20%;
-  animation: floatShape 6s ease-in-out infinite;
-}
-
-@keyframes floatShape {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  width: 120px;
+  height: 120px;
+  top: 45%;
+  right: 15%;
 }
 
 .auth-form-container {
@@ -584,16 +553,16 @@ const switchTab = (tab) => {
 }
 
 .logo-small {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
-  border-radius: var(--radius-lg);
+  width: 32px;
+  height: 32px;
+  background: var(--primary-600);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 800;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
 }
 
 .tabs {
@@ -647,26 +616,25 @@ const switchTab = (tab) => {
 }
 
 .send-code-btn {
-  padding: 0.875rem 1.25rem;
-  font-size: 0.875rem;
+  padding: 0.6875rem 1rem;
+  font-size: 0.8125rem;
   font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  color: #fff;
+  background: var(--primary-600);
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-  min-width: 120px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  min-width: 112px;
 }
 
 .send-code-btn:hover:not(.disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: var(--primary-700);
 }
 
 .send-code-btn:active:not(.disabled) {
-  transform: scale(0.98);
+  opacity: 0.92;
 }
 
 .send-code-btn.disabled {
@@ -724,13 +692,13 @@ const switchTab = (tab) => {
 }
 
 .input-wrapper input:focus {
-  border-color: var(--primary-500);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--gray-400);
+  box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.06);
 }
 
 .input-wrapper input:focus + .input-icon,
 .input-wrapper input:focus ~ .input-icon {
-  color: var(--primary-500);
+  color: var(--gray-600);
 }
 
 .toggle-password {
@@ -779,37 +747,24 @@ const switchTab = (tab) => {
 }
 
 .btn-primary {
-  padding: 0.75rem 1.25rem;
-  font-size: 0.9375rem;
+  padding: 0.6875rem 1.25rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  position: relative;
-  overflow: hidden;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
+  display: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  background: var(--primary-700);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-block {
@@ -853,9 +808,8 @@ const switchTab = (tab) => {
 }
 
 .social-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-300);
+  border-color: var(--gray-400);
+  box-shadow: var(--shadow-xs);
 }
 
 .social-btn.wechat:hover {

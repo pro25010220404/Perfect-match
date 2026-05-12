@@ -4,7 +4,6 @@
     <div class="page-header">
       <div class="header-content">
         <h1 class="page-title">
-          <span class="title-icon">🧠</span>
           智能队友推荐
         </h1>
         <p class="page-subtitle">基于技能互补、竞赛经验与协作风格的AI匹配算法，为你精准推荐最佳搭档</p>
@@ -346,10 +345,10 @@ const circumference = 2 * Math.PI * 42
 const expandedCard = ref(null)
 
 const algorithmSteps = [
-  { icon: '📋', title: '技能采集', desc: '分析你的技能树与熟练度', gradient: 'linear-gradient(135deg, #667eea, #764ba2)' },
-  { icon: '🔍', title: '特征提取', desc: '挖掘竞赛偏好与协作模式', gradient: 'linear-gradient(135deg, #11998e, #38ef7d)' },
-  { icon: '🧮', title: '多维匹配', desc: '交叉比对候选人能力矩阵', gradient: 'linear-gradient(135deg, #F59E0B, #D97706)' },
-  { icon: '📊', title: '智能排序', desc: '输出最优推荐列表', gradient: 'linear-gradient(135deg, #EC4899, #BE185D)' }
+  { icon: '📋', title: '技能采集', desc: '分析你的技能树与熟练度', gradient: '#3f3f46' },
+  { icon: '🔍', title: '特征提取', desc: '挖掘竞赛偏好与协作模式', gradient: '#0f766e' },
+  { icon: '🧮', title: '多维匹配', desc: '交叉比对候选人能力矩阵', gradient: '#854d0e' },
+  { icon: '📊', title: '智能排序', desc: '输出最优推荐列表', gradient: '#9f1239' }
 ]
 
 const mySkills = ref([
@@ -560,7 +559,7 @@ const algorithmFactors = [
     desc: '分析双方技能树的互补性，优先推荐能填补你技能空白的候选人',
     weight: 35,
     color: '#2563EB',
-    bgGradient: 'linear-gradient(135deg, rgba(37,99,235,0.1), rgba(59,130,246,0.05))'
+    bgGradient: 'var(--gray-100)'
   },
   {
     icon: '🏅',
@@ -568,7 +567,7 @@ const algorithmFactors = [
     desc: '基于历史竞赛成绩、参赛次数和获奖记录评估候选人的实战经验',
     weight: 25,
     color: '#059669',
-    bgGradient: 'linear-gradient(135deg, rgba(5,150,105,0.1), rgba(16,185,129,0.05))'
+    bgGradient: 'var(--gray-100)'
   },
   {
     icon: '🤝',
@@ -576,7 +575,7 @@ const algorithmFactors = [
     desc: '通过历史协作数据、评价反馈和工作习惯判断双方的协作兼容性',
     weight: 20,
     color: '#8B5CF6',
-    bgGradient: 'linear-gradient(135deg, rgba(139,92,246,0.1), rgba(167,139,250,0.05))'
+    bgGradient: 'var(--gray-100)'
   },
   {
     icon: '🎯',
@@ -584,7 +583,7 @@ const algorithmFactors = [
     desc: '根据双方关注的竞赛类型、目标赛事和时间安排进行匹配度加权',
     weight: 20,
     color: '#F59E0B',
-    bgGradient: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(251,191,36,0.05))'
+    bgGradient: 'var(--gray-100)'
   }
 ]
 
@@ -595,14 +594,14 @@ function matchColor(score) {
 }
 
 function getSkillColor(level) {
-  const colors = ['#EF4444', '#F97316', '#F59E0B', '#3B82F6', '#10B981']
+  const colors = ['var(--gray-500)', 'var(--warning-600)', 'var(--primary-600)', 'var(--accent-600)', 'var(--success-600)']
   return colors[level - 1] || colors[0]
 }
 
 function getCompareBarColor(theirLevel, mineLevel) {
-  if (theirLevel > mineLevel) return 'linear-gradient(90deg, #10B981, #34D399)'
-  if (theirLevel === mineLevel) return 'linear-gradient(90deg, #3B82F6, #60A5FA)'
-  return 'linear-gradient(90deg, #94A3B8, #CBD5E1)'
+  if (theirLevel > mineLevel) return 'var(--success-600)'
+  if (theirLevel === mineLevel) return 'var(--primary-600)'
+  return 'var(--gray-400)'
 }
 
 function getDiffClass(theirLevel, mineLevel) {
@@ -641,27 +640,22 @@ function toggleExpand(id) {
 /* 页面头部 */
 .page-header {
   margin-bottom: 2rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(102, 126, 234, 0.15);
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
 }
 
 .page-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.625rem;
+  font-weight: 600;
   color: var(--gray-900);
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   line-height: 1.2;
-}
-
-.title-icon {
-  font-size: 2rem;
-  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -671,9 +665,9 @@ function toggleExpand(id) {
 
 .page-subtitle {
   color: var(--gray-500);
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-left: 2.75rem;
+  font-size: 0.9375rem;
+  margin-top: 0.375rem;
+  margin-left: 0;
 }
 
 /* 算法流程 */
@@ -814,7 +808,7 @@ function toggleExpand(id) {
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  background: var(--primary-600);
   opacity: 0.2;
   animation: pulse-ring 2s infinite;
 }
@@ -828,7 +822,7 @@ function toggleExpand(id) {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   font-family: var(--font-display);
   font-size: 1.65rem;
@@ -1069,11 +1063,11 @@ function toggleExpand(id) {
   opacity: 1;
 }
 
-.recommendation-card:nth-child(5n+1)::before { background: linear-gradient(90deg, #10B981, #34D399); }
-.recommendation-card:nth-child(5n+2)::before { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
-.recommendation-card:nth-child(5n+3)::before { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
-.recommendation-card:nth-child(5n+4)::before { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
-.recommendation-card:nth-child(5n+5)::before { background: linear-gradient(90deg, #EC4899, #F472B6); }
+.recommendation-card:nth-child(5n+1)::before { background: var(--success-600); }
+.recommendation-card:nth-child(5n+2)::before { background: var(--primary-600); }
+.recommendation-card:nth-child(5n+3)::before { background: var(--accent-600); }
+.recommendation-card:nth-child(5n+4)::before { background: var(--warning-600); }
+.recommendation-card:nth-child(5n+5)::before { background: var(--gray-700); }
 
 /* 卡片顶部 */
 .card-top {
@@ -1248,7 +1242,7 @@ function toggleExpand(id) {
 }
 
 .bar.mine {
-  background: linear-gradient(90deg, var(--primary-400), var(--primary-500));
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
 }
 
 .bar.theirs {
@@ -1329,7 +1323,7 @@ function toggleExpand(id) {
 .adv-tag.method {
   background: #F5F3FF;
   color: #7C3AED;
-  border-color: rgba(124, 58, 237, 0.2);
+  border-color: var(--gray-300);
 }
 
 .adv-tag.trait {
@@ -1379,7 +1373,7 @@ function toggleExpand(id) {
   justify-content: center;
   gap: 0.4rem;
   padding: 0.65rem 1rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-md);
@@ -1392,7 +1386,7 @@ function toggleExpand(id) {
 
 .btn-invite:hover:not(:disabled) {
   transform: scale(1.03);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(196, 30, 58, 0.35);
 }
 
 .btn-invite:disabled {
@@ -1509,7 +1503,7 @@ function toggleExpand(id) {
   font-size: 0.83rem;
   color: var(--gray-700);
   line-height: 1.65;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.06), rgba(118, 75, 162, 0.06));
+  background: var(--gray-100);
   padding: 0.875rem 1rem;
   border-radius: var(--radius-lg);
   border-left: 3px solid var(--primary-500);
@@ -1548,7 +1542,7 @@ function toggleExpand(id) {
 
 .btn-reset-empty {
   padding: 0.7rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-lg);
@@ -1560,7 +1554,7 @@ function toggleExpand(id) {
 
 .btn-reset-empty:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(196, 30, 58, 0.3);
 }
 
 /* 算法说明区域 */

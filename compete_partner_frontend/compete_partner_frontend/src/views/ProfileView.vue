@@ -370,11 +370,11 @@ const userInfo = reactive({
 const userInitial = computed(() => userInfo.name.charAt(0))
 
 const skills = ref([
-  { name: 'Python', level: 4, gradient: 'linear-gradient(90deg, #3B82F6, #60A5FA)' },
-  { name: 'C++', level: 3, gradient: 'linear-gradient(90deg, #8B5CF6, #A78BFA)' },
-  { name: '机器学习', level: 5, gradient: 'linear-gradient(90deg, #10B981, #34D399)' },
-  { name: '算法设计', level: 4, gradient: 'linear-gradient(90deg, #F59E0B, #FBBF24)' },
-  { name: '数据分析', level: 3, gradient: 'linear-gradient(90deg, #EC4899, #F472B6)' }
+  { name: 'Python', level: 4, gradient: 'var(--primary-600)' },
+  { name: 'C++', level: 3, gradient: 'var(--accent-600)' },
+  { name: '机器学习', level: 5, gradient: 'var(--success-600)' },
+  { name: '算法设计', level: 4, gradient: 'var(--warning-600)' },
+  { name: '数据分析', level: 3, gradient: '#0f766e' }
 ])
 
 const myTeams = ref([
@@ -387,7 +387,7 @@ const myTeams = ref([
     roleDesc: '角色: 队长 / 算法工程师',
     status: '进行中',
     statusClass: 'status-active',
-    gradient: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)'
+    gradient: '#27272a'
   },
   {
     id: 2,
@@ -398,7 +398,7 @@ const myTeams = ref([
     roleDesc: '角色: Python开发',
     status: '招募中',
     statusClass: 'status-recruiting',
-    gradient: 'linear-gradient(135deg, #059669 0%, #10B981 100%)'
+    gradient: '#166534'
   },
   {
     id: 3,
@@ -409,7 +409,7 @@ const myTeams = ref([
     roleDesc: '角色: 编程手',
     status: '已结束',
     statusClass: 'status-ended',
-    gradient: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%)'
+    gradient: '#52525b'
   }
 ])
 
@@ -417,7 +417,7 @@ const reviews = ref([
   {
     name: '李明',
     initial: '李',
-    avatarGradient: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
+    avatarGradient: 'var(--primary-600)',
     teamName: '无人车战队',
     date: '2025-04-15',
     qualityScore: 5,
@@ -427,7 +427,7 @@ const reviews = ref([
   {
     name: '王芳',
     initial: '王',
-    avatarGradient: 'linear-gradient(135deg, #059669, #10B981)',
+    avatarGradient: 'var(--success-600)',
     teamName: 'AI创新赛',
     date: '2025-03-20',
     qualityScore: 5,
@@ -437,7 +437,7 @@ const reviews = ref([
   {
     name: '孙伟',
     initial: '孙',
-    avatarGradient: 'linear-gradient(135deg, #7C3AED, #8B5CF6)',
+    avatarGradient: 'var(--accent-600)',
     teamName: '数学建模',
     date: '2025-02-10',
     qualityScore: 4,
@@ -468,13 +468,13 @@ const editForm = reactive({
 })
 
 const gradients = [
-  'linear-gradient(90deg, #3B82F6, #60A5FA)',
-  'linear-gradient(90deg, #8B5CF6, #A78BFA)',
-  'linear-gradient(90deg, #10B981, #34D399)',
-  'linear-gradient(90deg, #F59E0B, #FBBF24)',
-  'linear-gradient(90deg, #EC4899, #F472B6)',
-  'linear-gradient(90deg, #EF4444, #F87171)',
-  'linear-gradient(90deg, #06B6D4, #22D3EE)'
+  'var(--primary-600)',
+  'var(--accent-600)',
+  'var(--success-600)',
+  'var(--warning-600)',
+  '#9f1239',
+  'var(--danger-600)',
+  '#0f766e'
 ]
 
 function handleAddSkill() {
@@ -526,7 +526,7 @@ function getLevelClass(level) {
   left: 0;
   right: 0;
   height: 120px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 50%, rgba(16, 185, 129, 0.06) 100%);
+  background: var(--gray-100);
 }
 
 .header-content {
@@ -546,7 +546,7 @@ function getLevelClass(level) {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-500) 0%, var(--accent-500) 100%);
+  background: var(--primary-600);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -554,7 +554,7 @@ function getLevelClass(level) {
   font-size: 2.25rem;
   font-weight: 800;
   font-family: var(--font-display);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.25);
   border: 4px solid white;
 }
 
@@ -634,14 +634,14 @@ function getLevelClass(level) {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.2);
 }
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(196, 30, 58, 0.35);
 }
 
 .btn-primary:disabled {
@@ -823,22 +823,6 @@ function getLevelClass(level) {
   position: relative;
 }
 
-.skill-bar-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
 .skill-level-num {
   min-width: 36px;
   font-size: 0.8125rem;
@@ -966,12 +950,12 @@ function getLevelClass(level) {
 }
 
 .btn-action.btn-primary {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
 }
 
 .btn-action.btn-primary:hover {
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
 }
 
 .btn-action.btn-secondary {
@@ -1237,7 +1221,7 @@ function getLevelClass(level) {
 .form-input:focus {
   outline: none;
   border-color: var(--primary-500);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
 }
 
 .form-input::placeholder {

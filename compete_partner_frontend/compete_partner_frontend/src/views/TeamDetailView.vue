@@ -329,7 +329,7 @@ const teamData = ref({
   name: '无人车战队',
   emoji: '🏎️',
   goal: '全国大学生智能汽车竞赛一等奖',
-  gradient: 'linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%)',
+  gradient: '#27272a',
   leaderName: '李明',
   rating: '4.9',
   currentMembers: 3,
@@ -348,7 +348,7 @@ const members = ref([
   {
     id: 1,
     name: '李明',
-    avatarBg: 'linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%)',
+    avatarBg: '#1e3a8a',
     roleLabel: '队长',
     roleClass: 'leader',
     roleText: '队长 / 算法工程师',
@@ -358,7 +358,7 @@ const members = ref([
   {
     id: 2,
     name: '王芳',
-    avatarBg: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+    avatarBg: '#166534',
     roleLabel: '已确认',
     roleClass: 'confirmed',
     roleText: '嵌入式开发',
@@ -368,7 +368,7 @@ const members = ref([
   {
     id: 3,
     name: '张伟',
-    avatarBg: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+    avatarBg: '#854d0e',
     roleLabel: '⏳ 待确认',
     roleClass: 'pending',
     roleText: '机械设计',
@@ -470,10 +470,10 @@ function initRadarChart() {
         {
           label: '当前能力',
           data: [4.5, 4.0, 4.5, 4.0, 2.0, 0],
-          backgroundColor: 'rgba(37, 99, 235, 0.15)',
-          borderColor: 'rgba(37, 99, 235, 1)',
+          backgroundColor: 'rgba(196, 30, 58, 0.15)',
+          borderColor: 'rgba(196, 30, 58, 1)',
           borderWidth: 2,
-          pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+          pointBackgroundColor: 'rgba(196, 30, 58, 1)',
           pointBorderColor: '#fff',
           pointBorderWidth: 2,
           pointRadius: 4,
@@ -794,14 +794,14 @@ export default {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 14px rgba(196, 30, 58, 0.25);
 }
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.35);
 }
 
 .btn-primary:disabled {

@@ -254,7 +254,7 @@ const invitations = ref([
     matchScore: 85,
     createdAt: '2025-05-07 10:30',
     status: 'pending',
-    gradient: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)'
+    gradient: '#1e3a8a'
   },
   {
     id: 2,
@@ -272,7 +272,7 @@ const invitations = ref([
     matchScore: 72,
     createdAt: '2025-05-06 15:20',
     status: 'pending',
-    gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)'
+    gradient: '#166534'
   },
   {
     id: 3,
@@ -290,7 +290,7 @@ const invitations = ref([
     matchScore: 91,
     createdAt: '2025-04-28 09:00',
     status: 'accepted',
-    gradient: 'linear-gradient(135deg, #EE0979 0%, #FF6A00 100%)'
+    gradient: '#9f1239'
   },
   {
     id: 4,
@@ -308,7 +308,7 @@ const invitations = ref([
     matchScore: 58,
     createdAt: '2025-04-20 14:00',
     status: 'rejected',
-    gradient: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)'
+    gradient: '#854d0e'
   }
 ])
 
@@ -329,7 +329,7 @@ const sentInvitations = ref([
     matchScore: 88,
     createdAt: '2025-05-08 11:00',
     status: 'waiting',
-    gradient: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)'
+    gradient: '#52525b'
   },
   {
     id: 102,
@@ -347,7 +347,7 @@ const sentInvitations = ref([
     matchScore: 76,
     createdAt: '2025-05-03 16:45',
     status: 'waiting',
-    gradient: 'linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)'
+    gradient: '#0f766e'
   }
 ])
 
@@ -456,10 +456,10 @@ function handleRetry(invite) {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(124, 58, 237, 0.06) 100%);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(37, 99, 235, 0.1);
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
 }
 
 .page-title {
@@ -999,7 +999,7 @@ function handleRetry(invite) {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-lg);
@@ -1007,12 +1007,12 @@ function handleRetry(invite) {
   font-size: 0.9375rem;
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.25);
 }
 
 .btn-primary-action:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.35);
 }
 
 /* 列表过渡动画 */

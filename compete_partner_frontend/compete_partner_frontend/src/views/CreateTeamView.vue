@@ -765,10 +765,10 @@ const submitForm = async () => {
 }
 
 .step-item.active .step-circle {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   border-color: transparent;
   color: white;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.35);
   transform: scale(1.1);
 }
 
@@ -843,9 +843,9 @@ const submitForm = async () => {
   flex-shrink: 0;
 }
 
-.step-icon.basic { background: linear-gradient(135deg, #3B82F6, #2563EB); }
-.step-icon.desc { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
-.step-icon.roles { background: linear-gradient(135deg, #F59E0B, #D97706); }
+.step-icon.basic { background: var(--accent-700); }
+.step-icon.desc { background: var(--primary-600); }
+.step-icon.roles { background: var(--warning-600); }
 
 .step-title {
   font-family: var(--font-display);
@@ -995,10 +995,10 @@ const submitForm = async () => {
 }
 
 .member-btn.active {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   border-color: transparent;
   color: white;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
   transform: translateY(-2px);
 }
 
@@ -1043,7 +1043,7 @@ const submitForm = async () => {
   align-items: center;
   gap: 0.375rem;
   padding: 0.375rem 0.75rem;
-  background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+  background: linear-gradient(135deg, var(--primary-50), var(--gray-100));
   border: 1px solid var(--primary-200);
   border-radius: var(--radius-full);
   font-size: 0.8125rem;
@@ -1104,7 +1104,7 @@ const submitForm = async () => {
   display: inline-flex;
   align-items: center;
   padding: 0.375rem 1rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border-radius: var(--radius-full);
   font-size: 0.875rem;
@@ -1164,10 +1164,10 @@ const submitForm = async () => {
 }
 
 .count-btn.active {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   border-color: transparent;
   color: white;
-  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 3px 10px rgba(196, 30, 58, 0.3);
 }
 
 .btn-add-role {
@@ -1392,14 +1392,14 @@ const submitForm = async () => {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.25);
 }
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.35);
 }
 
 .btn-primary:active:not(:disabled) {

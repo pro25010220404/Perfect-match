@@ -89,98 +89,93 @@ const handleLogout = () => {
 
 <style scoped>
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: #fff;
   border-bottom: 1px solid var(--gray-200);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
-  box-shadow: var(--shadow-xs);
 }
 
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 60px;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.625rem;
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--gray-900);
   text-decoration: none;
+  letter-spacing: -0.02em;
   transition: opacity var(--transition-fast);
 }
 
 .navbar-brand:hover {
-  opacity: 0.8;
+  opacity: 0.85;
   color: var(--gray-900);
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
-  border-radius: var(--radius-lg);
+  width: 36px;
+  height: 36px;
+  background: var(--primary-600);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 800;
-  font-size: 1.125rem;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .brand-text {
-  background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-600) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--gray-900);
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.125rem;
   list-style: none;
 }
 
 .navbar-nav a {
-  padding: 0.625rem 1.125rem;
-  color: var(--gray-500);
+  padding: 0.5rem 0.875rem;
+  color: var(--gray-600);
   font-weight: 500;
-  font-size: 0.9375rem;
-  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
   transition: color var(--transition-fast), background-color var(--transition-fast);
   position: relative;
 }
 
 .navbar-nav a:hover {
-  color: var(--primary-600);
-  background: var(--primary-50);
+  color: var(--gray-900);
+  background: var(--gray-100);
 }
 
 .navbar-nav a.active {
   color: var(--primary-600);
-  background: var(--primary-50);
+  background: transparent;
   font-weight: 600;
 }
 
 .navbar-nav a.active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-600), var(--accent-600));
-  border-radius: 2px;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--primary-600);
+  border-radius: 1px;
 }
 
 .navbar-right {
@@ -191,92 +186,89 @@ const handleLogout = () => {
 
 .notification-btn {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gray-100);
-  border: none;
-  border-radius: var(--radius-full);
+  background: transparent;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
   cursor: pointer;
   color: var(--gray-600);
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .notification-btn:hover {
-  background: var(--gray-200);
-  color: var(--gray-800);
-  transform: scale(1.05);
+  background: var(--gray-50);
+  color: var(--gray-900);
+  border-color: var(--gray-300);
 }
 
 .notification-btn .badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  background: linear-gradient(135deg, var(--danger-500), #DC2626);
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background: var(--primary-600);
   color: white;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: pulse 2s infinite;
 }
 
 .navbar-user {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.375rem 0.875rem 0.375rem 0.375rem;
-  background: var(--gray-100);
-  border-radius: var(--radius-full);
+  gap: 0.5rem;
+  padding: 0.25rem 0.625rem 0.25rem 0.25rem;
+  background: transparent;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
-  border: 2px solid transparent;
+  transition: background-color var(--transition-fast);
+  border: 1px solid transparent;
 }
 
 .navbar-user:hover {
-  background: var(--gray-200);
-  border-color: var(--primary-200);
+  background: var(--gray-100);
 }
 
 .logout-btn {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gray-100);
-  border: none;
-  border-radius: var(--radius-full);
+  background: transparent;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
   cursor: pointer;
   color: var(--gray-500);
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .logout-btn:hover {
   background: var(--danger-50);
-  color: var(--danger-500);
-  transform: scale(1.05);
+  color: var(--danger-600);
+  border-color: var(--gray-300);
 }
 
 .avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-500) 0%, var(--accent-500) 100%);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--gray-800);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: 700;
-  font-size: 0.875rem;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  font-weight: 600;
+  font-size: 0.8125rem;
 }
 
 .name {
@@ -286,16 +278,16 @@ const handleLogout = () => {
 }
 
 .footer {
-  background: white;
+  background: var(--gray-50);
   border-top: 1px solid var(--gray-200);
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   margin-top: auto;
 }
 
 .footer p {
   text-align: center;
-  color: var(--gray-400);
-  font-size: 0.875rem;
+  color: var(--gray-500);
+  font-size: 0.8125rem;
 }
 
 @media (max-width: 768px) {

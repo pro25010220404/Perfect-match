@@ -4,7 +4,7 @@
     <div class="welcome-section">
       <div class="welcome-content">
         <h1 class="welcome-title">
-          欢迎回来，<span class="gradient-text">{{ userName }}</span> 👋
+          欢迎回来，<span class="accent-name">{{ userName }}</span>
         </h1>
         <p class="welcome-subtitle">
           今天是寻找理想队友的好日子，看看有没有适合你的团队
@@ -50,7 +50,7 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon purple">
+        <div class="stat-icon slate">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
           </svg>
@@ -79,7 +79,7 @@
     <section class="section">
       <div class="section-header">
         <div>
-          <h2 class="section-title">🔥 推荐团队</h2>
+          <h2 class="section-title">推荐团队</h2>
           <p class="section-subtitle">根据你的技能和兴趣智能推荐</p>
         </div>
         <router-link to="/teams" class="view-all">
@@ -139,7 +139,7 @@
     <!-- 快速操作 -->
     <section class="quick-actions">
       <button class="action-card" @click="$router.push('/recommendations')" aria-label="前往智能匹配页面">
-        <div class="action-icon gradient-blue">
+        <div class="action-icon tone-brand">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
             <path d="m21 21-4.35-4.35"></path>
@@ -155,7 +155,7 @@
       </button>
 
       <button class="action-card" @click="$router.push('/invitations')" aria-label="查看我的邀请">
-        <div class="action-icon gradient-purple">
+        <div class="action-icon tone-slate">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
@@ -169,7 +169,7 @@
       </button>
 
       <button class="action-card" @click="$router.push('/profile')" aria-label="前往个人中心">
-        <div class="action-icon gradient-green">
+        <div class="action-icon tone-green">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
@@ -204,7 +204,7 @@ const recommendedTeams = ref([
     deadline: '截止 2025-12-31',
     status: '招募中',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    gradient: '#27272a',
     roles: ['算法工程师', '嵌入式开发', '机械设计']
   },
   {
@@ -218,7 +218,7 @@ const recommendedTeams = ref([
     deadline: '截止 2025-11-15',
     status: '急招',
     statusClass: 'urgent',
-    gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    gradient: '#3f3f46',
     roles: ['Python开发', '算法设计', '前端开发']
   },
   {
@@ -232,7 +232,7 @@ const recommendedTeams = ref([
     deadline: '截止 2025-09-30',
     status: '已满员',
     statusClass: 'full',
-    gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
+    gradient: '#1e3a5f',
     roles: ['编程手', '论文写作', '建模']
   }
 ])
@@ -251,27 +251,25 @@ const showApplyModal = (team) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(102, 126, 234, 0.15);
+  margin-bottom: 2rem;
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
 }
 
 .welcome-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.625rem;
+  font-weight: 600;
   color: var(--gray-900);
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.accent-name {
+  color: var(--primary-600);
+  font-weight: 600;
 }
 
 .welcome-subtitle {
@@ -284,22 +282,21 @@ const showApplyModal = (team) => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-  color: white;
+  padding: 0.625rem 1.25rem;
+  background: var(--primary-600);
+  color: #fff;
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
   white-space: nowrap;
 }
 
 .btn-create:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  background: var(--primary-700);
+  box-shadow: var(--shadow-md);
 }
 
 .stats-grid {
@@ -312,57 +309,34 @@ const showApplyModal = (team) => {
 .stat-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.75rem;
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-100);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+  gap: 1rem;
+  padding: 1.25rem 1.375rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
 }
-
-.stat-card:hover::before {
-  opacity: 1;
-}
-
-.stat-card:nth-child(1)::before { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
-.stat-card:nth-child(2)::before { background: linear-gradient(90deg, #10B981, #34D399); }
-.stat-card:nth-child(3)::before { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
-.stat-card:nth-child(4)::before { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
 
 .stat-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   flex-shrink: 0;
 }
 
-.stat-icon.blue { background: linear-gradient(135deg, #3B82F6, #2563EB); }
-.stat-icon.green { background: linear-gradient(135deg, #10B981, #059669); }
-.stat-icon.purple { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
-.stat-icon.orange { background: linear-gradient(135deg, #F59E0B, #D97706); }
+.stat-icon.blue { background: var(--accent-700); }
+.stat-icon.green { background: var(--success-600); }
+.stat-icon.slate { background: #52525b; }
+.stat-icon.orange { background: var(--warning-600); }
 
 .stat-info {
   display: flex;
@@ -378,15 +352,14 @@ const showApplyModal = (team) => {
 
 .stat-value {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--gray-900);
   line-height: 1;
 }
 
 .stat-value.highlight {
-  color: var(--danger-500);
-  animation: pulse 2s infinite;
+  color: var(--primary-600);
 }
 
 .section {
@@ -402,10 +375,11 @@ const showApplyModal = (team) => {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--gray-900);
   margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
@@ -435,23 +409,21 @@ const showApplyModal = (team) => {
 }
 
 .team-card {
-  background: white;
-  border-radius: var(--radius-xl);
+  background: #fff;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-100);
+  border: 1px solid var(--gray-200);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-  border-color: transparent;
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-md);
 }
 
 .card-cover {
-  height: 160px;
+  height: 120px;
   position: relative;
   display: flex;
   align-items: center;
@@ -460,21 +432,20 @@ const showApplyModal = (team) => {
 }
 
 .card-emoji {
-  font-size: 4rem;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
-  animation: float 3s ease-in-out infinite;
+  font-size: 2.75rem;
+  opacity: 0.95;
 }
 
 .card-status {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.375rem 0.875rem;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
   font-weight: 600;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .card-status.recruiting { color: var(--success-600); }
@@ -487,10 +458,10 @@ const showApplyModal = (team) => {
 
 .card-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.0625rem;
+  font-weight: 600;
   color: var(--gray-900);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
 }
 
 .card-desc {
@@ -533,13 +504,13 @@ const showApplyModal = (team) => {
 }
 
 .role-tag {
-  padding: 0.25rem 0.75rem;
-  background: var(--primary-50);
-  color: var(--primary-700);
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  padding: 0.1875rem 0.5rem;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
   font-weight: 500;
-  border: 1px solid var(--primary-100);
+  border: 1px solid var(--gray-200);
 }
 
 .card-footer {
@@ -570,19 +541,18 @@ const showApplyModal = (team) => {
 .btn-apply {
   flex: 1;
   padding: 0.625rem 1rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-  color: white;
+  background: var(--primary-600);
+  color: #fff;
   border: none;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .btn-apply:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: var(--primary-700);
 }
 
 .quick-actions {
@@ -594,37 +564,35 @@ const showApplyModal = (team) => {
 .action-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-100);
+  gap: 1rem;
+  padding: 1.25rem 1.375rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
 }
 
 .action-card:hover {
-  transform: translateX(6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-200);
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
 }
 
 .action-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   flex-shrink: 0;
 }
 
-.gradient-blue { background: linear-gradient(135deg, #3B82F6, #2563EB); }
-.gradient-purple { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
-.gradient-green { background: linear-gradient(135deg, #10B981, #059669); }
+.tone-brand { background: var(--primary-600); }
+.tone-slate { background: var(--accent-600); }
+.tone-green { background: var(--success-600); }
 
 .action-content h4 {
   font-weight: 600;
@@ -645,24 +613,23 @@ const showApplyModal = (team) => {
 }
 
 .action-card:hover .arrow-icon {
-  transform: translateX(4px);
+  transform: translateX(3px);
   color: var(--primary-600);
 }
 
 .badge-count {
-  min-width: 24px;
-  height: 24px;
-  padding: 0 8px;
-  background: linear-gradient(135deg, var(--danger-500), #DC2626);
-  color: white;
-  font-size: 0.75rem;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: var(--primary-600);
+  color: #fff;
+  font-size: 0.6875rem;
   font-weight: 700;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  animation: pulse 2s infinite;
 }
 
 @media (max-width: 768px) {

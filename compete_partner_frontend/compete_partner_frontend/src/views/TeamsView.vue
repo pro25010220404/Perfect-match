@@ -4,7 +4,6 @@
     <div class="page-header">
       <div class="header-content">
         <h1 class="page-title">
-          <span class="title-icon">🔍</span>
           团队广场
         </h1>
         <p class="page-subtitle">发现志同道合的队友，加入心仪的团队</p>
@@ -357,7 +356,7 @@ const teamsData = ref([
     deadline: '2025-12-31',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    gradient: '#27272a',
     competitionType: 'smart-car',
     roles: [
       { name: '算法工程师 1/2', urgent: true },
@@ -377,7 +376,7 @@ const teamsData = ref([
     deadline: '2025-11-15',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    gradient: '#3f3f46',
     competitionType: 'ai',
     roles: [
       { name: 'Python开发 1/2' },
@@ -397,7 +396,7 @@ const teamsData = ref([
     deadline: '2025-12-15',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+    gradient: '#854d0e',
     competitionType: 'robotics',
     roles: [
       { name: '机械设计 2/3' },
@@ -417,7 +416,7 @@ const teamsData = ref([
     deadline: '2025-09-01',
     status: 'urgent',
     statusClass: 'urgent',
-    gradient: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)',
+    gradient: '#52525b',
     competitionType: 'math-modeling',
     roles: [
       { name: '建模手 0/1', urgent: true },
@@ -437,7 +436,7 @@ const teamsData = ref([
     deadline: '2025-10-20',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #EC4899 0%, #BE185D 100%)',
+    gradient: '#9f1239',
     competitionType: 'data-analysis',
     roles: [
       { name: '数据挖掘 1/2' },
@@ -457,7 +456,7 @@ const teamsData = ref([
     deadline: '2025-11-30',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
+    gradient: '#1e3a8a',
     competitionType: 'software',
     roles: [
       { name: '前端开发 1/2' },
@@ -478,7 +477,7 @@ const teamsData = ref([
     deadline: '2025-11-10',
     status: 'in-progress',
     statusClass: 'in-progress',
-    gradient: 'linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)',
+    gradient: '#0f766e',
     competitionType: 'software',
     roles: [
       { name: '嵌入式开发 1/2' },
@@ -497,7 +496,7 @@ const teamsData = ref([
     deadline: '2025-12-25',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)',
+    gradient: '#991b1b',
     competitionType: 'software',
     roles: [
       { name: '逆向工程 2/2', filled: true },
@@ -518,7 +517,7 @@ const teamsData = ref([
     deadline: '2025-11-05',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)',
+    gradient: '#0e7490',
     competitionType: 'robotics',
     roles: [
       { name: '飞控算法 1/2' },
@@ -538,7 +537,7 @@ const teamsData = ref([
     deadline: '2025-12-10',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%)',
+    gradient: '#57534e',
     competitionType: 'software',
     roles: [
       { name: '智能合约 1/2' },
@@ -558,7 +557,7 @@ const teamsData = ref([
     deadline: '2025-11-20',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+    gradient: '#9a3412',
     competitionType: 'software',
     roles: [
       { name: 'Unity开发 1/2' },
@@ -579,7 +578,7 @@ const teamsData = ref([
     deadline: '2025-12-05',
     status: 'recruiting',
     statusClass: 'recruiting',
-    gradient: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+    gradient: '#166534',
     competitionType: 'ai',
     roles: [
       { name: 'NLP算法 1/2' },
@@ -716,10 +715,10 @@ const statusText = (status) => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(102, 126, 234, 0.15);
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
 }
 
 .header-content {
@@ -728,19 +727,21 @@ const statusText = (status) => {
 
 .page-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.625rem;
+  font-weight: 600;
   color: var(--gray-900);
   letter-spacing: -0.02em;
   line-height: 1.2;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.title-icon {
-  font-size: 2rem;
-  animation: float 3s ease-in-out infinite;
+.page-subtitle {
+  color: var(--gray-500);
+  font-size: 0.9375rem;
+  margin-top: 0.375rem;
+  margin-left: 0;
 }
 
 @keyframes float {
@@ -748,32 +749,25 @@ const statusText = (status) => {
   50% { transform: translateY(-8px); }
 }
 
-.page-subtitle {
-  color: var(--gray-500);
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-left: 2.75rem;
-}
-
 .btn-create-team {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border-radius: var(--radius-lg);
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
   transition: all var(--transition-base);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 16px rgba(196, 30, 58, 0.25);
   white-space: nowrap;
 }
 
 .btn-create-team:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.35);
   color: white;
 }
 
@@ -1024,12 +1018,12 @@ const statusText = (status) => {
   opacity: 1;
 }
 
-.team-card:nth-child(6n+1)::before { background: linear-gradient(90deg, #667eea, #764ba2); }
-.team-card:nth-child(6n+2)::before { background: linear-gradient(90deg, #11998e, #38ef7d); }
-.team-card:nth-child(6n+3)::before { background: linear-gradient(90deg, #F59E0B, #D97706); }
-.team-card:nth-child(6n+4)::before { background: linear-gradient(90deg, #8B5CF6, #7C3AED); }
-.team-card:nth-child(6n+5)::before { background: linear-gradient(90deg, #EC4899, #BE185D); }
-.team-card:nth-child(6n+6)::before { background: linear-gradient(90deg, #3B82F6, #2563EB); }
+.team-card:nth-child(6n+1)::before { background: var(--primary-600); }
+.team-card:nth-child(6n+2)::before { background: var(--success-600); }
+.team-card:nth-child(6n+3)::before { background: var(--warning-600); }
+.team-card:nth-child(6n+4)::before { background: var(--accent-600); }
+.team-card:nth-child(6n+5)::before { background: var(--gray-700); }
+.team-card:nth-child(6n+6)::before { background: #0f766e; }
 
 /* 卡片封面 */
 .card-cover {
@@ -1240,7 +1234,7 @@ const statusText = (status) => {
 
 .btn-apply {
   padding: 0.5rem 0.875rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-md);
@@ -1253,7 +1247,7 @@ const statusText = (status) => {
 
 .btn-apply:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
 /* 列表视图 */
@@ -1392,7 +1386,7 @@ const statusText = (status) => {
 
 .btn-apply-list {
   padding: 0.625rem 1.25rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-md);
@@ -1405,7 +1399,7 @@ const statusText = (status) => {
 
 .btn-apply-list:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
 /* 空状态 */
@@ -1441,7 +1435,7 @@ const statusText = (status) => {
 
 .btn-reset-empty {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   color: white;
   border: none;
   border-radius: var(--radius-lg);
@@ -1453,7 +1447,7 @@ const statusText = (status) => {
 
 .btn-reset-empty:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(196, 30, 58, 0.3);
 }
 
 /* 分页 */
@@ -1499,10 +1493,10 @@ const statusText = (status) => {
 }
 
 .page-num.active {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
+  background: var(--primary-600);
   border-color: transparent;
   color: white;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.25);
 }
 
 .page-ellipsis {
