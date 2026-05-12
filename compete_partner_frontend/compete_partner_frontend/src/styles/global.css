@@ -80,6 +80,15 @@
   --z-modal: 500;
   --z-popover: 600;
   --z-tooltip: 700;
+
+  /* Element Plus 主题主色（与 --primary-600 一致） */
+  --el-color-primary: #c41e3a;
+  --el-color-primary-light-3: #d6455c;
+  --el-color-primary-light-5: #e06e80;
+  --el-color-primary-light-7: #ea97a4;
+  --el-color-primary-light-8: #efacbc;
+  --el-color-primary-light-9: #f9dfe4;
+  --el-color-primary-dark-2: #9d1830;
 }
 
 *, *::before, *::after {

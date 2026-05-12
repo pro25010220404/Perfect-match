@@ -264,39 +264,40 @@
       </div>
     </div>
 
-    <!-- 申请加入弹窗 -->
-    <Teleport to="body">
-      <Transition name="modal-fade">
-        <div v-if="showApply" class="modal-overlay" @click.self="closeApplyModal">
-          <div class="modal-box">
-            <div class="modal-header">
-              <h3 class="modal-title">申请加入团队</h3>
-              <button class="modal-close-btn" @click="closeApplyModal">✕</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label class="form-label required">选择角色</label>
-                <select v-model="applyForm.selectedRole" class="form-select">
-                  <option value="" disabled>请选择申请角色</option>
-                  <option v-for="role in availableRoles" :key="role" :value="role">{{ role }}</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">申请留言</label>
-                <textarea v-model="applyForm.message" class="form-textarea" rows="4"
-                          placeholder="介绍一下你自己，为什么想加入这个团队..."></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" @click="closeApplyModal">取消</button>
-              <button class="btn btn-primary" @click="submitApply" :disabled="!applyForm.selectedRole">
-                提交申请
-              </button>
-            </div>
-          </div>
-        </div>
-      </Transition>
-    </Teleport>
+    <el-dialog
+      v-model="showApply"
+      title="申请加入团队"
+      width="480px"
+      destroy-on-close
+      @closed="closeApplyModal"
+    >
+      <el-form label-position="top">
+        <el-form-item label="选择角色" required>
+          <el-select v-model="applyForm.selectedRole" placeholder="请选择申请角色" style="width: 100%">
+            <el-option
+              v-for="role in availableRoles"
+              :key="role"
+              :label="role"
+              :value="role"
+            />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="申请留言">
+          <el-input
+            v-model="applyForm.message"
+            type="textarea"
+            :rows="4"
+            placeholder="介绍一下你自己，为什么想加入这个团队..."
+          />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="closeApplyModal">取消</el-button>
+        <el-button type="primary" :disabled="!applyForm.selectedRole" @click="submitApply">
+          提交申请
+        </el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
