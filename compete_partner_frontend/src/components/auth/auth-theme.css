@@ -1,0 +1,16 @@
+.auth-theme {
+  --auth-page-bg: #ffffff;
+  --auth-card-bg: #ffffff;
+  --auth-text: #0a0a0a;
+  --auth-text-muted: #6b7280;
+  --auth-border: #e5e7eb;
+  --auth-btn-primary: #0a0a0a;
+  --auth-btn-primary-hover: #262626;
+  --auth-demo-bg: #f9fafb;
+  --auth-card-radius: 20px;
+  --auth-card-shadow: none;
+  --auth-card-max-width: 420px;
+  --auth-accent-orange: #f97316;
+  font-family: var(--font-body);
+  color: var(--auth-text);
+}
